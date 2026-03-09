@@ -33,13 +33,13 @@ const projects = [
 
 export default function Projects() {
     return (
-        <section className="min-h-screen bg-[#121212] py-32 px-8 md:px-24">
+        <section className="min-h-screen bg-[#121212] py-20 sm:py-24 md:py-32 px-4 sm:px-8 md:px-24">
             <div className="max-w-7xl mx-auto">
 
-                <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500 mb-6 drop-shadow-md pb-2">
+                <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500 mb-4 md:mb-6 drop-shadow-md pb-1 md:pb-2">
                     Professional Hub
                 </h2>
-                <p className="text-xl text-neutral-400 mb-16 max-w-2xl border-l-2 border-neutral-800 pl-4">
+                <p className="text-lg sm:text-xl text-neutral-400 mb-10 md:mb-16 max-w-2xl border-l-2 border-neutral-800 pl-4">
                     A central directory to explore my infrastructure work, professional background, and ways to connect.
                 </p>
 
@@ -47,10 +47,10 @@ export default function Projects() {
                     {projects.map((project) => {
                         const cardContent = (
                             <div
-                                className="group relative rounded-2xl overflow-hidden bg-[#1a1a1a] border border-white/5 p-6 transition-all duration-300 hover:bg-[#222222] hover:border-emerald-500/30 hover:shadow-[0_0_40px_rgba(16,185,129,0.1)] cursor-pointer h-full flex flex-col"
+                                className="group relative rounded-2xl overflow-hidden bg-[#1a1a1a] border border-white/5 p-5 md:p-6 transition-all duration-300 hover:bg-[#222222] hover:border-emerald-500/30 hover:shadow-[0_0_40px_rgba(16,185,129,0.1)] cursor-pointer h-full flex flex-col"
                             >
                                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-6 border border-white/10">
+                                <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-4 md:mb-6 border border-white/10">
                                     <Image
                                         src={project.image}
                                         alt={project.title}
@@ -59,10 +59,10 @@ export default function Projects() {
                                     />
                                 </div>
                                 <div className="flex-grow">
-                                    <h3 className="text-2xl font-semibold text-white mb-3 group-hover:text-emerald-400 transition-colors duration-300">
+                                    <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2 md:mb-3 group-hover:text-emerald-400 transition-colors duration-300">
                                         {project.title}
                                     </h3>
-                                    <p className="text-neutral-400 leading-relaxed">
+                                    <p className="text-sm sm:text-base text-neutral-400 leading-relaxed">
                                         {project.description}
                                     </p>
                                 </div>

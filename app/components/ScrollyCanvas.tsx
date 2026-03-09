@@ -78,22 +78,18 @@ export default function ScrollyCanvas() {
 
             const img = images[index];
 
-            // object-fit: cover logic mathematically
-            const cw = canvas.width;
-            const ch = canvas.height;
-            const iw = img.width;
-            const ih = img.height;
-
+            // Calculate scale to ensure the image covers the canvas completely
+            // without distorting aspect ratio (equivalent to object-fit: cover)
             const scale = Math.max(cw / iw, ch / ih);
             const sw = iw * scale;
             const sh = ih * scale;
 
-            // Center the image
-            const x = cw / 2 - sw / 2;
-            const y = ch / 2 - sh / 2;
+            // Center the image within the canvas
+            // On mobile height > width, this correctly crops left/right edges uniformly
+            const x = (cw - sw) / 2;
+            const y = (ch - sh) / 2;
 
             ctx.clearRect(0, 0, cw, ch);
-            // We fill black background first just in case
             ctx.fillStyle = "#121212";
             ctx.fillRect(0, 0, cw, ch);
 
