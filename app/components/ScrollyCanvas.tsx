@@ -36,7 +36,7 @@ export default function ScrollyCanvas() {
                         const paddedIndex = i.toString().padStart(3, "0");
 
                         // GitHub Pages uses the repository name as basePath (/PortFolio)
-                        const basePath = process.env.NODE_ENV === "production" ? "/PortFolio" : "";
+                        const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
                         img.src = `${basePath}/sequence/frame_${paddedIndex}_delay-0.066s.png`;
 
                         img.onload = () => resolve(img);
