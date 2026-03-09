@@ -34,7 +34,10 @@ export default function ScrollyCanvas() {
                         const img = new Image();
                         // Format frame index with 3 digits padding: 000, 001, ..., 119
                         const paddedIndex = i.toString().padStart(3, "0");
-                        img.src = `/sequence/frame_${paddedIndex}_delay-0.066s.png`;
+
+                        // GitHub Pages uses the repository name as basePath (/PortFolio)
+                        const basePath = process.env.NODE_ENV === "production" ? "/PortFolio" : "";
+                        img.src = `${basePath}/sequence/frame_${paddedIndex}_delay-0.066s.png`;
 
                         img.onload = () => resolve(img);
                         img.onerror = () => reject(new Error(`Failed to load frame ${i}`));
